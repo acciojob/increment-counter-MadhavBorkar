@@ -4,9 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const incrementBtn = document.getElementById('incrementBtn');
  let counterValue = 0;
     counterElement.textContent = counterValue;
-  incrementBtn.addEventListener('click', function() {
-    alert(`Counter Value : ${counterValue}`);
-    counterValue++;
-    counterElement.textContent = counterValue;
-});
+  () => { 
+    cy.visit(baseUrl); 
+    cy.on('window:alert', alertText => { 
+        expect(alertText).to.equal('Counter Value : 0'); 
+    }); 
+    cy.get('#incrementBtn').click(); 
+}
 });
