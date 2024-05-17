@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let counterValue = 0;
 
     incrementButton.addEventListener('click', () => {
-        alert(`Current counter value: ${0}`);
+        alert(`Current counter value: ${counterValue}`);
         counterValue++;
         counterElement.textContent = counterValue;
     });
