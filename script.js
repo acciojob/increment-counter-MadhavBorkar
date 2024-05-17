@@ -1,11 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     const counterElement = document.getElementById('counter');
-    const incrementBtn = document.getElementById('incrementBtn');
+    const incrementButton = document.getElementById('incrementBtn');
+
     let counterValue = 0;
-    counterElement.textContent = counterValue;
-    incrementBtn.addEventListener('click', function() {
+
+    incrementButton.addEventListener('click', () => {
+        alert(`Current counter value: ${counterValue}`);
         counterValue++;
         counterElement.textContent = counterValue;
-        alert(`Counter Value : ${counterValue}`);
     });
 });
